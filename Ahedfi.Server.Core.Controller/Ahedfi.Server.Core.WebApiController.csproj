@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\bin\host\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ahedfi.Server.Core.Domain\Ahedfi.Server.Core.Domain.csproj" />
+    <ProjectReference Include="..\Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

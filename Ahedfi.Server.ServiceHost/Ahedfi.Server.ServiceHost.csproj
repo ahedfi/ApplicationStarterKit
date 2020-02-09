@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ahedfi.Server.Core\Ahedfi.Server.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Ahedfi.Component.Hosting.Domain.Service">
+      <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.Service.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>
