@@ -1,30 +1,23 @@
-﻿using Ahedfi.Component.Hosting.Domain.Service;
+﻿using Ahedfi.Component.Hosting.Domain.Services;
 using Ahedfi.Server.Core.Domain.BusinessService;
 using Ahedfi.Server.Core.Domain.Interface;
 using Ahedfi.Server.Core.Service;
 using Ahedfi.Server.Core.WebApiController;
-using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Ahedfi.Server.Core
 {
-    public class CoreModule : AutofacModule
+    public class CoreModule : BaseModule
     {
-        public override void RegisterTypes(ContainerBuilder builder)
+        // This module should be loaded first
+        public override int Order { get { return 0; } }
+        public override void RegisterTypes(IServiceCollection container)
         {
             // Register Business Service Provider
-            builder.RegisterType<BusinessService>().As<IBusinessService>()
-             .InstancePerLifetimeScope();
+            container.AddScoped<IBusinessService, BusinessService>();
 
             // Register Service Provider
-            builder.RegisterType<CoreService>().As<ICoreService>()
-               .InstancePerLifetimeScope();
-
-            // Register Controller
-            builder.RegisterType<CoreController>().AsSelf().WithProperty("Value", "PropertyName")
-               .InstancePerLifetimeScope();
+            container.AddScoped<ICoreService, CoreService>();
         }
     }
 }

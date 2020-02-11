@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -13,10 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Ahedfi.Component.Hosting.Domain.Service">
-      <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.Service.dll</HintPath>
+    <Reference Include="Ahedfi.Component.Builder.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Builder.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Ahedfi.Component.Hosting.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.dll</HintPath>
     </Reference>
   </ItemGroup>
-
 
 </Project>

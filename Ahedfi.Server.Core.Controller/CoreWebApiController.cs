@@ -7,17 +7,15 @@ using System.Text;
 namespace Ahedfi.Server.Core.WebApiController
 {
     [ApiController]
-    [Route("api/core")]
-    public class CoreController : ControllerBase
+    [Route("api/web/core")]
+    public class CoreWebApiController : ControllerBase
     {
         private readonly ICoreService _coreService;
 
-        public CoreController(ICoreService coreService)
+        public CoreWebApiController(ICoreService coreService)
         {
             _coreService = coreService;
         }
-
-        public string Value { get; set; }
 
         [HttpGet]
         public string Get()

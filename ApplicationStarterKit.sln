@@ -13,17 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebHost", "WebHost", "{A47D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.Host.Web", "Ahedfi.Server.Host.Web\Ahedfi.Server.Host.Web.csproj", "{6F71DA70-A495-49D9-B3F1-CBC0C83860D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.ServiceHost", "Ahedfi.Server.ServiceHost\Ahedfi.Server.ServiceHost.csproj", "{196DF9B8-6391-4B60-BA73-B59AB598827B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahedfi.Server.ServiceHost", "Ahedfi.Server.ServiceHost\Ahedfi.Server.ServiceHost.csproj", "{196DF9B8-6391-4B60-BA73-B59AB598827B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.Core.Domain", "Ahedfi.Server.Core.Domain\Ahedfi.Server.Core.Domain.csproj", "{F086A49C-7565-4651-8422-5FE4415D8EA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahedfi.Server.Core.Domain", "Ahedfi.Server.Core.Domain\Ahedfi.Server.Core.Domain.csproj", "{F086A49C-7565-4651-8422-5FE4415D8EA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.Core.Infrastructure", "Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj", "{6067CFEA-3509-48C9-A3BD-B136034B8B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahedfi.Server.Core.Infrastructure", "Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj", "{6067CFEA-3509-48C9-A3BD-B136034B8B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.Core.Service", "Ahedfi.Server.Core.Service\Ahedfi.Server.Core.Service.csproj", "{D68EF6A5-FB46-45EF-84C3-2920D86B2A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahedfi.Server.Core.Service", "Ahedfi.Server.Core.Service\Ahedfi.Server.Core.Service.csproj", "{D68EF6A5-FB46-45EF-84C3-2920D86B2A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.Core.WebApiController", "Ahedfi.Server.Core.Controller\Ahedfi.Server.Core.WebApiController.csproj", "{3FFEFCBD-A61F-4AED-B682-4A2042D9A3B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahedfi.Server.Core.Web.ApiController", "Ahedfi.Server.Core.Controller\Ahedfi.Server.Core.Web.ApiController.csproj", "{3FFEFCBD-A61F-4AED-B682-4A2042D9A3B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahedfi.Server.Core", "Ahedfi.Server.Core\Ahedfi.Server.Core.csproj", "{6DECFD05-31E8-4369-8EA6-B4930D8EB2A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahedfi.Server.Core", "Ahedfi.Server.Core\Ahedfi.Server.Core.csproj", "{6DECFD05-31E8-4369-8EA6-B4930D8EB2A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
