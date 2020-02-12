@@ -7,12 +7,21 @@
     <OutputPath>..\bin\host\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Ahedfi.Server.Core.Controller\Ahedfi.Server.Core.Web.ApiController.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Domain\Ahedfi.Server.Core.Domain.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Service\Ahedfi.Server.Core.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Ahedfi.Component.Data.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Data.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Ahedfi.Component.Data.Infrastructure">
+      <HintPath>..\Libs\Ahedfi.Component.Data.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Ahedfi.Component.Hosting.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.dll</HintPath>
     </Reference>

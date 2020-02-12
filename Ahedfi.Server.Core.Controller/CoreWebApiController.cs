@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Ahedfi.Server.Core.WebApiController
 {
@@ -18,9 +19,9 @@ namespace Ahedfi.Server.Core.WebApiController
         }
 
         [HttpGet]
-        public string Get()
+        public async Task Get()
         {
-            return _coreService.SayHello();
+           await _coreService.AddCustomer();
         }
     }
 }

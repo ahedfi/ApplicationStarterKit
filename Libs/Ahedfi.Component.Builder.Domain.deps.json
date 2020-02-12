@@ -1709,6 +1709,7 @@
       },
       "Ahedfi.Component.Hosting.Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.1"
         },
         "runtime": {

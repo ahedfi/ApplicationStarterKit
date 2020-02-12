@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Ahedfi.Component.Data.Domain/1.0.0": {
+        "dependencies": {
+          "Ahedfi.Component.Core.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Ahedfi.Component.Data.Domain.dll": {}
+        }
+      },
+      "Ahedfi.Component.Core.Domain/1.0.0": {
+        "runtime": {
+          "Ahedfi.Component.Core.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ahedfi.Component.Data.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ahedfi.Component.Core.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

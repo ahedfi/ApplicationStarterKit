@@ -6,4 +6,12 @@
   <PropertyGroup>
     <OutputPath>..\bin\host\</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ahedfi.Component.Core.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Ahedfi.Component.Data.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Data.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

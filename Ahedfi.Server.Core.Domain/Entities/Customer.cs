@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Ahedfi.Component.Core.Domain.Entities;
+using Ahedfi.Component.Core.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Ahedfi.Server.Core.Domain.Entities
 {
-    public class Customer
+    public class Customer : AuditableEntity<int>, IAggregateRoot
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-        public string FullName { get; set; }
     }
 }

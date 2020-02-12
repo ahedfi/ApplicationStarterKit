@@ -2,14 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Ahedfi.Server.Core.Service
 {
     public class CoreService : ICoreService
     {
-        public string SayHello()
+        private readonly ICustomerBusinessServiceProvider _customerBusinessService;
+
+        public CoreService(ICustomerBusinessServiceProvider customerBusinessService)
         {
-            throw new NotImplementedException();
+            _customerBusinessService = customerBusinessService;
+        }
+        public async Task AddCustomer()
+        {
+            await _customerBusinessService.AddCustomer();
         }
     }
 }
