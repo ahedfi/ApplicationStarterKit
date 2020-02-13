@@ -9,12 +9,8 @@ namespace Ahedfi.Server.ServiceHost
 {
     public class Startup : BaseStartup
     {
-        public Startup(IConfiguration configuration):base(configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration) : base(configuration)
+        { }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public override void ConfigureServices(IServiceCollection services)

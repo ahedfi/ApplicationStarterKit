@@ -1,20 +1,21 @@
 ﻿using Ahedfi.Server.Core.Domain.Entities;
 using Ahedfi.Server.Core.Domain.Interface;
+using System;
 using System.Threading.Tasks;
 
 namespace Ahedfi.Server.Core.Domain.BusinessService
 {
     public class CustomerBusinessServiceProvider : ICustomerBusinessServiceProvider
     {
-        private readonly ICustomerRepository _customerRepository;
+        private readonly ICoreUnitOfWork _coreUnitOfWork;
 
-        public CustomerBusinessServiceProvider(ICustomerRepository customerRepository)
+        public CustomerBusinessServiceProvider(ICoreUnitOfWork coreUnitOfWork)
         {
-            _customerRepository = customerRepository;
+            _coreUnitOfWork = coreUnitOfWork;
         }
-        public async Task<Customer> AddCustomer()
+        public async Task AddCustomer()
         {
-            return await _customerRepository.AddAsync(new Customer { Name = "Ahmed" });
+            await _coreUnitOfWork.Repository<Customer>().AddAsync(new Customer { Name = "new entry02" + new Guid().ToString() });
         }
     }
 }

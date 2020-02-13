@@ -1,5 +1,6 @@
 ﻿using Ahedfi.Component.Data.Domain.Interfaces;
 using Ahedfi.Component.Data.Infrastructure;
+using Ahedfi.Component.Data.Infrastructure.Behaviors;
 using Ahedfi.Component.Hosting.Domain.Services;
 using Ahedfi.Server.Core.Domain.BusinessService;
 using Ahedfi.Server.Core.Domain.Interface;
@@ -22,14 +23,20 @@ namespace Ahedfi.Server.Core
             options.UseSqlServer(configuration.GetConnectionString("Default")));
 
             // Register Repositories
-            services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));// TODO : Move To Boostrap Module
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));// TODO : Move To Bootstrap Module
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            // Register Unit Of Work
+            services.AddScoped<ICoreUnitOfWork, CoreUnitOfWork>();
 
             // Register Business Service Provider
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();
 
             // Register Service Provider
-            services.AddScoped<ICoreService, CoreService>();
+            services.AddScoped<CoreService>();
+            services.AddScoped<ICoreService>(service => TransactionBehavior<ICoreService>.Create(
+                service.GetService<CoreService>(), 
+                service.GetService<ICoreUnitOfWork>()));
         }
     }
 }
