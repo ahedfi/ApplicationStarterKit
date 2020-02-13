@@ -25,6 +25,9 @@
     <Reference Include="Ahedfi.Component.Hosting.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.dll</HintPath>
     </Reference>
+    <Reference Include="Ahedfi.Component.Services.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
 </Project>

@@ -13,5 +13,8 @@
     <Reference Include="Ahedfi.Component.Data.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Data.Domain.dll</HintPath>
     </Reference>
+    <Reference Include="Ahedfi.Component.Services.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

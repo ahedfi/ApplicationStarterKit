@@ -1,6 +1,7 @@
 ﻿using Ahedfi.Component.Data.Domain.Interfaces;
 using Ahedfi.Component.Data.Infrastructure;
 using Ahedfi.Component.Data.Infrastructure.Behaviors;
+using Ahedfi.Component.Hosting.Domain.Extensions;
 using Ahedfi.Component.Hosting.Domain.Services;
 using Ahedfi.Server.Core.Domain.BusinessService;
 using Ahedfi.Server.Core.Domain.Interface;
@@ -33,10 +34,11 @@ namespace Ahedfi.Server.Core
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();
 
             // Register Service Provider
-            services.AddScoped<CoreService>();
-            services.AddScoped<ICoreService>(service => TransactionBehavior<ICoreService>.Create(
-                service.GetService<CoreService>(), 
-                service.GetService<ICoreUnitOfWork>()));
+            services.AddServiceProvider<ICoreService, CoreService, ICoreUnitOfWork>();
+            //services.AddScoped<CoreService>();
+            //services.AddScoped<ICoreService>(service => TransactionBehavior<ICoreService>.Create(
+            //    service.GetService<CoreService>(), 
+            //    service.GetService<ICoreUnitOfWork>()));
         }
     }
 }
