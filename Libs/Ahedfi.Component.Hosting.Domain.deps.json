@@ -11,7 +11,8 @@
           "Ahedfi.Component.Data.Infrastructure": "1.0.0",
           "Ahedfi.Component.Services.Domain": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.1"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.1",
+          "NetCoreStack.DispatchProxyAsync": "2.2.0.0"
         },
         "runtime": {
           "Ahedfi.Component.Hosting.Domain.dll": {}
@@ -211,6 +212,14 @@
         "runtime": {
           "Ahedfi.Component.Services.Domain.dll": {}
         }
+      },
+      "NetCoreStack.DispatchProxyAsync/2.2.0.0": {
+        "runtime": {
+          "NetCoreStack.DispatchProxyAsync.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
       }
     }
   },
@@ -370,6 +379,11 @@
     },
     "Ahedfi.Component.Services.Domain/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreStack.DispatchProxyAsync/2.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -1793,6 +1793,14 @@
         "runtime": {
           "Ahedfi.Component.Services.Domain.dll": {}
         }
+      },
+      "NetCoreStack.DispatchProxyAsync/2.2.0.0": {
+        "runtime": {
+          "NetCoreStack.DispatchProxyAsync.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
       }
     }
   },
@@ -3000,6 +3008,11 @@
     },
     "Ahedfi.Component.Services.Domain/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreStack.DispatchProxyAsync/2.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

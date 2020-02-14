@@ -21,7 +21,6 @@ namespace Ahedfi.Server.Core.WebApiController
         [HttpGet]
         public async Task Get()
         {
-           
              await _coreService.AddCustomer();
         }
     }

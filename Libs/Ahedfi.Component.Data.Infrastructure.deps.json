@@ -9,7 +9,8 @@
       "Ahedfi.Component.Data.Infrastructure/1.0.0": {
         "dependencies": {
           "Ahedfi.Component.Data.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "3.1.1"
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "NetCoreStack.DispatchProxyAsync": "2.2.0.0"
         },
         "runtime": {
           "Ahedfi.Component.Data.Infrastructure.dll": {}
@@ -195,6 +196,14 @@
         "runtime": {
           "Ahedfi.Component.Data.Domain.dll": {}
         }
+      },
+      "NetCoreStack.DispatchProxyAsync/2.2.0.0": {
+        "runtime": {
+          "NetCoreStack.DispatchProxyAsync.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
       }
     }
   },
@@ -344,6 +353,11 @@
     },
     "Ahedfi.Component.Data.Domain/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreStack.DispatchProxyAsync/2.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }
