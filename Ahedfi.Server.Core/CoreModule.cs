@@ -26,9 +26,6 @@ namespace Ahedfi.Server.Core
             options.UseSqlServer(configuration.GetConnectionString("Default")));
 
             // Register Repositories
-            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));// TODO : Move To Bootstrap Module
-            services.AddScoped<IServiceLocator,ServiceLocator>();// TODO : Move To Bootstrap Module
-
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             // Register Unit Of Work
@@ -36,11 +33,10 @@ namespace Ahedfi.Server.Core
 
             // Register Business Service Provider
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();
+            services.DecorateWithDispatchProxyAsync<ICustomerBusinessServiceProvider, LogBehavior<ICustomerBusinessServiceProvider>>();
 
             // Register Service Provider
             services.AddScoped<ICoreService, CoreService>();
-
-            services.DecorateWithDispatchProxyAsync<ICoreService, LogBehavior<ICoreService>>();
             services.DecorateWithDispatchProxyAsync<ICoreService, TransactionBehavior<ICoreService>>();
         }
     }
