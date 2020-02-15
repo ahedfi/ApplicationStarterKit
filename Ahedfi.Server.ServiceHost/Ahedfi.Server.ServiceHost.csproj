@@ -16,11 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Ahedfi.Component.Builder.Domain">
-      <HintPath>..\Libs\Ahedfi.Component.Builder.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="Ahedfi.Component.Hosting.Domain">
-      <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.dll</HintPath>
+    <Reference Include="Ahedfi.Component.Bootstrapper">
+      <HintPath>..\Libs\Ahedfi.Component.Bootstrapper.dll</HintPath>
     </Reference>
   </ItemGroup>
 

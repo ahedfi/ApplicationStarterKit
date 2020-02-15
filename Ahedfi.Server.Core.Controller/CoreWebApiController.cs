@@ -1,4 +1,5 @@
-﻿using Ahedfi.Server.Core.Domain.Interface;
+﻿using Ahedfi.Server.Core.Domain.Dtos;
+using Ahedfi.Server.Core.Domain.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace Ahedfi.Server.Core.WebApiController
         public async Task Get()
         {
              await _coreService.AddCustomer();
+        }
+
+        [HttpGet("customers")]
+        public async Task<IEnumerable<CustomerDto>> GetAll()
+        {
+            return await _coreService.FindAllCustomers();
         }
     }
 }

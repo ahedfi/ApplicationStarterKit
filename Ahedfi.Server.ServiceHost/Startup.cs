@@ -1,4 +1,4 @@
-using Ahedfi.Component.Builder.Domain.Services;
+using Ahedfi.Component.Bootstrapper.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
