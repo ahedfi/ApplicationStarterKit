@@ -35,7 +35,7 @@
       <HintPath>..\Libs\Ahedfi.Component.Services.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="NetCoreStack.DispatchProxyAsync">
-      <HintPath>..\..\FrameworkComponents\Libs\NetCoreStack.DispatchProxyAsync.dll</HintPath>
+      <HintPath>..\Libs\NetCoreStack.DispatchProxyAsync.dll</HintPath>
     </Reference>
   </ItemGroup>
   
