@@ -1,8 +1,9 @@
 ﻿using Ahedfi.Component.Data.Domain.Interfaces;
 using Ahedfi.Component.Data.Infrastructure;
-using Ahedfi.Component.Data.Infrastructure.Behaviors;
 using Ahedfi.Component.Hosting.Domain.Extensions;
 using Ahedfi.Component.Hosting.Domain.Services;
+using Ahedfi.Component.Services.Domain.Inerfaces;
+using Ahedfi.Component.Services.Infrastructure;
 using Ahedfi.Server.Core.Domain.BusinessService;
 using Ahedfi.Server.Core.Domain.Interface;
 using Ahedfi.Server.Core.Infrastructure.Data;
@@ -25,6 +26,7 @@ namespace Ahedfi.Server.Core
 
             // Register Repositories
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));// TODO : Move To Bootstrap Module
+            services.AddScoped<IServiceLocator,ServiceLocator>();// TODO : Move To Bootstrap Module
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             // Register Unit Of Work
@@ -35,10 +37,6 @@ namespace Ahedfi.Server.Core
 
             // Register Service Provider
             services.AddServiceProvider<ICoreService, CoreService, ICoreUnitOfWork>();
-            //services.AddScoped<CoreService>();
-            //services.AddScoped<ICoreService>(service => TransactionBehavior<ICoreService>.Create(
-            //    service.GetService<CoreService>(), 
-            //    service.GetService<ICoreUnitOfWork>()));
         }
     }
 }

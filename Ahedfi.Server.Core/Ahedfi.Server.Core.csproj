@@ -28,6 +28,9 @@
     <Reference Include="Ahedfi.Component.Services.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
     </Reference>
+    <Reference Include="Ahedfi.Component.Services.Infrastructure">
+      <HintPath>..\Libs\Ahedfi.Component.Services.Infrastructure.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
 </Project>

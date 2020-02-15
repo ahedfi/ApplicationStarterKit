@@ -13,7 +13,7 @@ namespace Ahedfi.Server.Core.Domain.BusinessService
         {
             _coreUnitOfWork = coreUnitOfWork;
         }
-        public async Task AddCustomer()
+        public async Task AddCustomerAsync()
         {
             await _coreUnitOfWork.Repository<Customer>().AddAsync(new Customer { Name = "new entry02" + new Guid().ToString() });
         }

@@ -1,22 +1,18 @@
-﻿using Ahedfi.Server.Core.Domain.Interface;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Ahedfi.Component.Services.Domain.Inerfaces;
+using Ahedfi.Server.Core.Domain.Interface;
 using System.Threading.Tasks;
+using Ahedfi.Component.Services.Infrastructure;
 
 namespace Ahedfi.Server.Core.Service
 {
-    public class CoreService : ICoreService
+    public class CoreService : BaseServiceProvider, ICoreService
     {
-        private readonly ICustomerBusinessServiceProvider _customerBusinessService;
-
-        public CoreService(ICustomerBusinessServiceProvider customerBusinessService)
+        public CoreService(IServiceLocator serviceLoactor):base(serviceLoactor)
         {
-            _customerBusinessService = customerBusinessService;
         }
         public async Task AddCustomer()
         {
-            await _customerBusinessService.AddCustomer();
+            await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync();
         }
     }
 }
