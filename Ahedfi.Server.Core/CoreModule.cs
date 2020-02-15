@@ -1,6 +1,5 @@
 ﻿using Ahedfi.Component.Data.Domain.Interfaces;
 using Ahedfi.Component.Data.Infrastructure;
-using Ahedfi.Component.Hosting.Domain.Extensions;
 using Ahedfi.Component.Hosting.Domain.Services;
 using Ahedfi.Component.Services.Domain.Inerfaces;
 using Ahedfi.Component.Services.Infrastructure;
@@ -11,6 +10,8 @@ using Ahedfi.Server.Core.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Ahedfi.Component.Hosting.Domain.Extensions;
+using Ahedfi.Component.Hosting.Infrastructure.Behaviors;
 
 namespace Ahedfi.Server.Core
 {
@@ -27,6 +28,7 @@ namespace Ahedfi.Server.Core
             // Register Repositories
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));// TODO : Move To Bootstrap Module
             services.AddScoped<IServiceLocator,ServiceLocator>();// TODO : Move To Bootstrap Module
+
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             // Register Unit Of Work
@@ -36,7 +38,10 @@ namespace Ahedfi.Server.Core
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();
 
             // Register Service Provider
-            services.AddServiceProvider<ICoreService, CoreService, ICoreUnitOfWork>();
+            services.AddScoped<ICoreService, CoreService>();
+
+            services.DecorateWithDispatchProxyAsync<ICoreService, LogBehavior<ICoreService>>();
+            services.DecorateWithDispatchProxyAsync<ICoreService, TransactionBehavior<ICoreService>>();
         }
     }
 }

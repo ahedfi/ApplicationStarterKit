@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -25,11 +25,17 @@
     <Reference Include="Ahedfi.Component.Hosting.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Hosting.Domain.dll</HintPath>
     </Reference>
+    <Reference Include="Ahedfi.Component.Hosting.Infrastructure">
+      <HintPath>..\Libs\Ahedfi.Component.Hosting.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Ahedfi.Component.Services.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Ahedfi.Component.Services.Infrastructure">
       <HintPath>..\Libs\Ahedfi.Component.Services.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="NetCoreStack.DispatchProxyAsync">
+      <HintPath>..\..\FrameworkComponents\Libs\NetCoreStack.DispatchProxyAsync.dll</HintPath>
     </Reference>
   </ItemGroup>
   
