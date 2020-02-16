@@ -9,6 +9,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +19,9 @@
   <ItemGroup>
     <Reference Include="Ahedfi.Component.Bootstrapper">
       <HintPath>..\Libs\Ahedfi.Component.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ahedfi.Component.Hosting.WebApi.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Hosting.WebApi.Domain.dll</HintPath>
     </Reference>
   </ItemGroup>
 
