@@ -16,16 +16,28 @@ namespace Ahedfi.Server.Core.Domain.BusinessService
         {
             _coreUnitOfWork = coreUnitOfWork;
         }
-        public async Task AddCustomerAsync()
+        public async Task<CustomerDto> AddCustomerAsync(CustomerDto customerDto)
         {
-            await _coreUnitOfWork.Repository<Customer>().AddAsync(new Customer { Name = "Customer " +  Guid.NewGuid() });
+            var customer = new Customer
+            {
+                Name = customerDto.Name,
+                CreatedOn = DateTime.Now,
+                CreatedBy = "ahedfi"
+            };
+            await _coreUnitOfWork.Repository<Customer>().AddAsync(customer);
             await _coreUnitOfWork.CommitAsync();
+            return new CustomerDto
+            {
+                Id = customer.Id,
+                Name = customer.Name,
+            };
         }
 
         public async Task<IEnumerable<CustomerDto>> FindCustomersAsync()
         {
             var result = await _coreUnitOfWork.Repository<Customer>().ListAllAsync();
-            return result.Select(e => new CustomerDto { 
+            return result.Select(e => new CustomerDto
+            {
                 Id = e.Id,
                 Name = e.Name,
             });

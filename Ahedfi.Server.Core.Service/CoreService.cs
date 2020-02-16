@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Ahedfi.Component.Services.Infrastructure;
 using System.Collections.Generic;
 using Ahedfi.Server.Core.Domain.Dtos;
+using Ahedfi.Component.Communication.Domain.Entities;
 
 namespace Ahedfi.Server.Core.Service
 {
@@ -12,14 +13,19 @@ namespace Ahedfi.Server.Core.Service
         public CoreService(IServiceLocator serviceLoactor) : base(serviceLoactor)
         {
         }
-        public async Task AddCustomer()
+        public async Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request)
         {
-            await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync();
+            return new SaveResponse<CustomerDto>
+            {
+                Value = await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync(request.Value)
+            };
         }
-
-        public async Task<IEnumerable<CustomerDto>> FindAllCustomers()
+        public async Task<FindResponse<CustomerDto>> FindAllCustomersAsync(FindRequest request)
         {
-            return await GetInstance<ICustomerBusinessServiceProvider>().FindCustomersAsync();
+            return new FindResponse<CustomerDto>
+            {
+                Value = await GetInstance<ICustomerBusinessServiceProvider>().FindCustomersAsync()
+            };
         }
     }
 }

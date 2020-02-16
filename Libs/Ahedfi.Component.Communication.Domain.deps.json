@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Ahedfi.Component.Communication.Domain/1.0.0": {
+        "dependencies": {
+          "Ahedfi.Component.Security.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Ahedfi.Component.Communication.Domain.dll": {}
+        }
+      },
+      "Ahedfi.Component.Security.Domain/1.0.0": {
+        "runtime": {
+          "Ahedfi.Component.Security.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ahedfi.Component.Communication.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ahedfi.Component.Security.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -11,6 +11,9 @@
     <ProjectReference Include="..\Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Ahedfi.Component.Communication.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Communication.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="Ahedfi.Component.Services.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
     </Reference>

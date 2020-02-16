@@ -1,9 +1,11 @@
-﻿using Ahedfi.Server.Core.Domain.Dtos;
+﻿using Ahedfi.Component.Communication.Domain.Entities;
+using Ahedfi.Server.Core.Domain.Dtos;
 using Ahedfi.Server.Core.Domain.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Ahedfi.Server.Core.WebApiController
@@ -19,16 +21,33 @@ namespace Ahedfi.Server.Core.WebApiController
              _coreService = coreService;
         }
 
-        [HttpGet]
-        public async Task Get()
+        [HttpPost, Route("addCustomer")]
+        public async Task<SaveResponse<CustomerDto>> AddAsync(SaveRequest<CustomerDto> request)
         {
-             await _coreService.AddCustomer();
+            var foo = JsonSerializer.Serialize(request);
+            try
+            {
+                return await _coreService.AddCustomer(request);
+            }
+            catch (Exception ex)
+            {
+
+                return new SaveResponse<CustomerDto>() { Exception = ex };
+            }
         }
 
-        [HttpGet("customers")]
-        public async Task<IEnumerable<CustomerDto>> GetAll()
+        [HttpPost, Route("customers")]
+        public async Task<FindResponse<CustomerDto>> GetAllAsync(FindRequest request)
         {
-            return await _coreService.FindAllCustomers();
+            try
+            {
+                return await _coreService.FindAllCustomersAsync(request);
+            }
+            catch (Exception ex)
+            {
+
+                return new FindResponse<CustomerDto>() { Exception = ex };
+            }
         }
     }
 }

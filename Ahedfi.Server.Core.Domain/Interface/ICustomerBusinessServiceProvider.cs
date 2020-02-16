@@ -6,7 +6,7 @@ namespace Ahedfi.Server.Core.Domain.Interface
 {
     public interface ICustomerBusinessServiceProvider
     {
-        Task AddCustomerAsync();
+        Task<CustomerDto> AddCustomerAsync(CustomerDto customerDto);
         Task<IEnumerable<CustomerDto>> FindCustomersAsync();
     }
 }
