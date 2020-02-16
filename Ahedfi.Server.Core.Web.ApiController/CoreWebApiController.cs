@@ -24,7 +24,6 @@ namespace Ahedfi.Server.Core.WebApiController
         [HttpPost, Route("addCustomer")]
         public async Task<SaveResponse<CustomerDto>> AddAsync(SaveRequest<CustomerDto> request)
         {
-            var foo = JsonSerializer.Serialize(request);
             try
             {
                 return await _coreService.AddCustomer(request);
