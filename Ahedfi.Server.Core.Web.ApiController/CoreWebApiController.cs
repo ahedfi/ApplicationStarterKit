@@ -1,24 +1,20 @@
 ﻿using Ahedfi.Component.Communication.Domain.Entities;
+using Ahedfi.Component.Hosting.WebApi.Domain.Entities;
+using Ahedfi.Component.Services.Domain.Inerfaces;
 using Ahedfi.Server.Core.Domain.Dtos;
 using Ahedfi.Server.Core.Domain.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Ahedfi.Server.Core.WebApiController
 {
     [ApiController]
     [Route("api/web/core")]
-    public class CoreWebApiController : ControllerBase
+    public class CoreWebApiController : BaseApiController
     {
-        private readonly ICoreService _coreService;
-
-        public CoreWebApiController(ICoreService coreService)
+        public CoreWebApiController(IServiceLocator serviceLocator) : base(serviceLocator)
         {
-             _coreService = coreService;
         }
 
         [HttpPost, Route("addCustomer")]
@@ -26,7 +22,7 @@ namespace Ahedfi.Server.Core.WebApiController
         {
             try
             {
-                return await _coreService.AddCustomer(request);
+                return await GetInstance<ICoreServices>().AddCustomer(request);
             }
             catch (Exception ex)
             {
@@ -40,7 +36,7 @@ namespace Ahedfi.Server.Core.WebApiController
         {
             try
             {
-                return await _coreService.FindAllCustomersAsync(request);
+                return await GetInstance<ICoreServices>().FindAllCustomersAsync(request);
             }
             catch (Exception ex)
             {

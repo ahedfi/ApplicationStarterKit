@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Ahedfi.Server.Core.Domain\Ahedfi.Server.Core.Domain.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Service\Ahedfi.Server.Core.Service.csproj" />
+    <ProjectReference Include="..\Ahedfi.Server.Core.Web.ApiController\Ahedfi.Server.Core.Web.ApiController.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Ahedfi.Component.Data.Domain">

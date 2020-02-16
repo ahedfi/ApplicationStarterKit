@@ -17,6 +17,9 @@
     <Reference Include="Ahedfi.Component.Communication.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Communication.Domain.dll</HintPath>
     </Reference>
+    <Reference Include="Ahedfi.Component.Hosting.WebApi.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Hosting.WebApi.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="Ahedfi.Component.Services.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
     </Reference>

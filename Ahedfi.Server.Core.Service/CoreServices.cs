@@ -8,9 +8,9 @@ using Ahedfi.Component.Communication.Domain.Entities;
 
 namespace Ahedfi.Server.Core.Service
 {
-    public class CoreService : BaseServiceProvider, ICoreService
+    public class CoreServices : BaseServiceProvider, ICoreServices
     {
-        public CoreService(IServiceLocator serviceLoactor) : base(serviceLoactor)
+        public CoreServices(IServiceLocator serviceLoactor) : base(serviceLoactor)
         {
         }
         public async Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request)

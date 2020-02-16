@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ahedfi.Server.Core.Domain.Interface
 {
-    public interface ICoreService
+    public interface ICoreServices
     {
         Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request);
         Task<FindResponse<CustomerDto>> FindAllCustomersAsync(FindRequest request);

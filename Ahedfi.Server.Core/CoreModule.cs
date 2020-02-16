@@ -36,9 +36,9 @@ namespace Ahedfi.Server.Core
             services.DecorateWithDispatchProxyAsync<ICustomerBusinessServiceProvider, LogBehavior<ICustomerBusinessServiceProvider>>();
 
             // Register Service Provider
-            services.AddScoped<ICoreService, CoreService>();
-            services.DecorateWithDispatchProxyAsync<ICoreService, LogBehavior<ICoreService>>();
-            services.DecorateWithDispatchProxyAsync<ICoreService, TransactionBehavior<ICoreService>>();
+            services.AddScoped<ICoreServices, CoreServices>();
+            services.DecorateWithDispatchProxyAsync<ICoreServices, LogBehavior<ICoreServices>>();
+            services.DecorateWithDispatchProxyAsync<ICoreServices, TransactionBehavior<ICoreServices>>();
         }
     }
 }
