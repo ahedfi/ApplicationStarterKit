@@ -10,7 +10,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ahedfi.Server.Core.Controller\Ahedfi.Server.Core.Web.ApiController.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Domain\Ahedfi.Server.Core.Domain.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Infrastructure\Ahedfi.Server.Core.Infrastructure.csproj" />
     <ProjectReference Include="..\Ahedfi.Server.Core.Service\Ahedfi.Server.Core.Service.csproj" />
