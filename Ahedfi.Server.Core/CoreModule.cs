@@ -14,6 +14,8 @@ using Ahedfi.Component.Hosting.Domain.Extensions;
 using Ahedfi.Component.Hosting.Infrastructure.Behaviors;
 using AutoMapper;
 using Ahedfi.Server.Core.Infrastructure.Profiles;
+using System.Reflection;
+using FluentValidation.AspNetCore;
 
 namespace Ahedfi.Server.Core
 {
@@ -34,8 +36,15 @@ namespace Ahedfi.Server.Core
             services.AddScoped<ICoreUnitOfWork, CoreUnitOfWork>();
 
             // Register AutoMapper
-            services.AddAutoMapper(typeof(CustomerProfile));
-
+            services.AddAutoMapper(Assembly.Load("Ahedfi.Server.Core.Infrastructure"));
+            
+            // Register Fluent Validation
+            services.AddControllers() 
+                    .AddFluentValidation(opt =>
+                    {
+                        opt.RegisterValidatorsFromAssembly(Assembly.Load("Ahedfi.Server.Core.Infrastructure"));
+                    });
+            
             // Register Business Service Provider
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();
             services.DecorateWithDispatchProxyAsync<ICustomerBusinessServiceProvider, LogBehavior<ICustomerBusinessServiceProvider>>();
