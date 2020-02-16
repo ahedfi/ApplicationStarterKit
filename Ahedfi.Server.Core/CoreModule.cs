@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ahedfi.Component.Hosting.Domain.Extensions;
 using Ahedfi.Component.Hosting.Infrastructure.Behaviors;
+using AutoMapper;
+using Ahedfi.Server.Core.Infrastructure.Profiles;
 
 namespace Ahedfi.Server.Core
 {
@@ -30,6 +32,9 @@ namespace Ahedfi.Server.Core
 
             // Register Unit Of Work
             services.AddScoped<ICoreUnitOfWork, CoreUnitOfWork>();
+
+            // Register AutoMapper
+            services.AddAutoMapper(typeof(CustomerProfile));
 
             // Register Business Service Provider
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();

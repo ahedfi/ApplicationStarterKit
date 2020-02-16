@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Ahedfi.Component.Core.Domain.Entities;
+using System;
 using System.Text.Json.Serialization;
 
 namespace Ahedfi.Server.Core.Domain.Dtos
 {
-    public class CustomerDto
+    public class CustomerDto : Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -5,42 +5,34 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using Ahedfi.Component.Data.Domain.Interfaces;
 
 namespace Ahedfi.Server.Core.Domain.BusinessService
 {
     public class CustomerBusinessServiceProvider : ICustomerBusinessServiceProvider
     {
         private readonly ICoreUnitOfWork _coreUnitOfWork;
+        private readonly IMapEngine _mapper;
 
-        public CustomerBusinessServiceProvider(ICoreUnitOfWork coreUnitOfWork)
+        public CustomerBusinessServiceProvider(ICoreUnitOfWork coreUnitOfWork, IMapEngine mapper)
         {
             _coreUnitOfWork = coreUnitOfWork;
+            _mapper = mapper;
         }
         public async Task<CustomerDto> AddCustomerAsync(CustomerDto customerDto)
         {
-            var customer = new Customer
-            {
-                Name = customerDto.Name,
-                CreatedOn = DateTime.Now,
-                CreatedBy = "ahedfi"
-            };
+            var customer = _mapper.Map<Customer>(customerDto);
+
             await _coreUnitOfWork.Repository<Customer>().AddAsync(customer);
             await _coreUnitOfWork.CommitAsync();
-            return new CustomerDto
-            {
-                Id = customer.Id,
-                Name = customer.Name,
-            };
-        }
 
+            return _mapper.Map<CustomerDto>(customer);
+
+        }
         public async Task<IEnumerable<CustomerDto>> FindCustomersAsync()
         {
             var result = await _coreUnitOfWork.Repository<Customer>().ListAllAsync();
-            return result.Select(e => new CustomerDto
-            {
-                Id = e.Id,
-                Name = e.Name,
-            });
+            return _mapper.MapList<CustomerDto>(result);
         }
     }
 }
