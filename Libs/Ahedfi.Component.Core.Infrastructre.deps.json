@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Ahedfi.Component.Services.Domain/1.0.0": {
+      "Ahedfi.Component.Core.Infrastructre/1.0.0": {
         "dependencies": {
           "Ahedfi.Component.Core.Domain": "1.0.0"
         },
         "runtime": {
-          "Ahedfi.Component.Services.Domain.dll": {}
+          "Ahedfi.Component.Core.Infrastructre.dll": {}
         }
       },
       "Ahedfi.Component.Core.Domain/1.0.0": {
@@ -22,7 +22,7 @@
     }
   },
   "libraries": {
-    "Ahedfi.Component.Services.Domain/1.0.0": {
+    "Ahedfi.Component.Core.Infrastructre/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

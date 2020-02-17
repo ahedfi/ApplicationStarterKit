@@ -1,6 +1,6 @@
 ﻿using Ahedfi.Component.Communication.Domain.Entities;
+using Ahedfi.Component.Core.Domain.DependencyInjection.Interfaces;
 using Ahedfi.Component.Hosting.WebApi.Domain.Entities;
-using Ahedfi.Component.Services.Domain.Inerfaces;
 using Ahedfi.Server.Core.Domain.Dtos;
 using Ahedfi.Server.Core.Domain.Interface;
 using Microsoft.AspNetCore.Mvc;

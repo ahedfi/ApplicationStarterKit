@@ -1,10 +1,9 @@
-﻿using Ahedfi.Component.Services.Domain.Inerfaces;
-using Ahedfi.Server.Core.Domain.Interface;
+﻿using Ahedfi.Server.Core.Domain.Interface;
 using System.Threading.Tasks;
-using Ahedfi.Component.Services.Infrastructure;
-using System.Collections.Generic;
 using Ahedfi.Server.Core.Domain.Dtos;
 using Ahedfi.Component.Communication.Domain.Entities;
+using Ahedfi.Component.Core.Domain.DependencyInjection.Interfaces;
+using Ahedfi.Component.Services.Domain.Services;
 
 namespace Ahedfi.Server.Core.Service
 {

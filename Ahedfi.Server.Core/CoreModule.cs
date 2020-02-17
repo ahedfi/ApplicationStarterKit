@@ -1,8 +1,4 @@
-﻿using Ahedfi.Component.Data.Domain.Interfaces;
-using Ahedfi.Component.Data.Infrastructure;
-using Ahedfi.Component.Hosting.Domain.Services;
-using Ahedfi.Component.Services.Domain.Inerfaces;
-using Ahedfi.Component.Services.Infrastructure;
+﻿using Ahedfi.Component.Hosting.Domain.Services;
 using Ahedfi.Server.Core.Domain.BusinessService;
 using Ahedfi.Server.Core.Domain.Interface;
 using Ahedfi.Server.Core.Infrastructure.Data;
@@ -10,12 +6,11 @@ using Ahedfi.Server.Core.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Ahedfi.Component.Hosting.Domain.Extensions;
 using Ahedfi.Component.Hosting.Infrastructure.Behaviors;
 using AutoMapper;
-using Ahedfi.Server.Core.Infrastructure.Profiles;
 using System.Reflection;
 using FluentValidation.AspNetCore;
+using Ahedfi.Component.Hosting.Infrastructure.Extensions;
 
 namespace Ahedfi.Server.Core
 {

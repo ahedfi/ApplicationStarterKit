@@ -14,7 +14,15 @@
           "Ahedfi.Component.Communication.Domain.dll": {}
         }
       },
+      "Ahedfi.Component.Core.Domain/1.0.0": {
+        "runtime": {
+          "Ahedfi.Component.Core.Domain.dll": {}
+        }
+      },
       "Ahedfi.Component.Security.Domain/1.0.0": {
+        "dependencies": {
+          "Ahedfi.Component.Core.Domain": "1.0.0"
+        },
         "runtime": {
           "Ahedfi.Component.Security.Domain.dll": {}
         }
@@ -23,6 +31,11 @@
   },
   "libraries": {
     "Ahedfi.Component.Communication.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ahedfi.Component.Core.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

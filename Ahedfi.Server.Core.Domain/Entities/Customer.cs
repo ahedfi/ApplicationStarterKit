@@ -1,8 +1,5 @@
-﻿using Ahedfi.Component.Core.Domain.Entities;
-using Ahedfi.Component.Core.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Ahedfi.Component.Core.Domain.Models.Entities;
+using Ahedfi.Component.Core.Domain.Models.Interfaces;
 
 namespace Ahedfi.Server.Core.Domain.Entities
 {
