@@ -9,8 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Ahedfi.Component.Hosting.Infrastructure.Behaviors;
 using AutoMapper;
 using System.Reflection;
-using FluentValidation.AspNetCore;
 using Ahedfi.Component.Hosting.Infrastructure.Extensions;
+using Ahedfi.Component.Core.Domain.Validation.interfaces;
 
 namespace Ahedfi.Server.Core
 {
@@ -18,6 +18,11 @@ namespace Ahedfi.Server.Core
     {
         // This module should be loaded first
         public override int Order { get { return 0; } }
+
+        public override void RegisterValidator(IRequestValidator requestValidator)
+        {
+            requestValidator.RegisterValidator("Ahedfi.Server.Core.Infrastructure");
+        }
         public override void RegisterTypes(IConfiguration configuration, IServiceCollection services)
         {
             // Register DbContext
@@ -33,13 +38,6 @@ namespace Ahedfi.Server.Core
             // Register AutoMapper
             services.AddAutoMapper(Assembly.Load("Ahedfi.Server.Core.Infrastructure"));
             
-            // Register Fluent Validation
-            services.AddControllers() 
-                    .AddFluentValidation(opt =>
-                    {
-                        opt.RegisterValidatorsFromAssembly(Assembly.Load("Ahedfi.Server.Core.Infrastructure"));
-                    });
-            
             // Register Business Service Provider
             services.AddScoped<ICustomerBusinessServiceProvider, CustomerBusinessServiceProvider>();
             services.DecorateWithDispatchProxyAsync<ICustomerBusinessServiceProvider, LogBehavior<ICustomerBusinessServiceProvider>>();
@@ -48,6 +46,7 @@ namespace Ahedfi.Server.Core
             services.AddScoped<ICoreServices, CoreServices>();
             services.DecorateWithDispatchProxyAsync<ICoreServices, LogBehavior<ICoreServices>>();
             services.DecorateWithDispatchProxyAsync<ICoreServices, TransactionBehavior<ICoreServices>>();
+            services.DecorateWithDispatchProxyAsync<ICoreServices, RequestValidatorBehavior<ICoreServices>>();
         }
     }
 }

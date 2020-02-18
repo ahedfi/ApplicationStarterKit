@@ -1,10 +1,8 @@
 ﻿using Ahedfi.Server.Core.Domain.Dtos;
 using Ahedfi.Server.Core.Domain.Entities;
 using Ahedfi.Server.Core.Domain.Interface;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 using Ahedfi.Component.Data.Domain.Interfaces;
 
 namespace Ahedfi.Server.Core.Domain.BusinessService

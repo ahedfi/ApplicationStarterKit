@@ -27,7 +27,7 @@ namespace Ahedfi.Server.Core.WebApiController
             catch (Exception ex)
             {
 
-                return new SaveResponse<CustomerDto>() { Exception = ex };
+                return new SaveResponse<CustomerDto>() { Exception = new Exception(ex.Message) };
             }
         }
 
