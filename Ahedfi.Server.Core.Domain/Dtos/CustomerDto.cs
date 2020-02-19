@@ -1,5 +1,6 @@
 ﻿using Ahedfi.Component.Core.Domain.Models.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace Ahedfi.Server.Core.Domain.Dtos
 {
@@ -7,9 +8,6 @@ namespace Ahedfi.Server.Core.Domain.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedOn { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedOn { get; set; }
+        public ICollection<AddressDto> Addresses { get; set; }
     }
 }
