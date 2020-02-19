@@ -16,7 +16,7 @@ namespace Ahedfi.Server.Core.Service
         {
             return new SaveResponse<CustomerDto>
             {
-                Value = await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync(request.Value)
+                Value = await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync(request.Owner, request.Value)
             };
         }
         public async Task<FindResponse<CustomerDto>> FindAllCustomersAsync(FindRequest request)
