@@ -1,6 +1,8 @@
-﻿namespace Ahedfi.Server.Core.Domain.Entities
+﻿using Ahedfi.Component.Core.Domain.Models.Entities;
+
+namespace Ahedfi.Server.Core.Domain.Entities
 {
-    public class Address
+    public class Address: AuditableEntity<int>
     {
         public string Street { get; set; }
         public string City { get; set; }
