@@ -15,7 +15,7 @@ namespace Ahedfi.Server.Core.Service
         }
         public async Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request)
         {
-            request.Owner = new UserIdentity { UserName = "ahedfi" };
+            request.Owner = new UserIdentity { UserName = "ahedfi" };// TODO : This line should be removed
             return new SaveResponse<CustomerDto>
             {
                 Value = await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync(request.Owner, request.Value)
