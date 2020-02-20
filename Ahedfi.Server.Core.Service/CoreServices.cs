@@ -4,6 +4,7 @@ using Ahedfi.Server.Core.Domain.Dtos;
 using Ahedfi.Component.Communication.Domain.Entities;
 using Ahedfi.Component.Core.Domain.DependencyInjection.Interfaces;
 using Ahedfi.Component.Services.Domain.Services;
+using Ahedfi.Component.Security.Domain.Entities;
 
 namespace Ahedfi.Server.Core.Service
 {
@@ -14,6 +15,7 @@ namespace Ahedfi.Server.Core.Service
         }
         public async Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request)
         {
+            request.Owner = new UserIdentity { UserName = "ahedfi" };
             return new SaveResponse<CustomerDto>
             {
                 Value = await GetInstance<ICustomerBusinessServiceProvider>().AddCustomerAsync(request.Owner, request.Value)

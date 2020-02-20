@@ -26,7 +26,7 @@ namespace Ahedfi.Server.Core.Domain.BusinessService
         }
         public async Task<IEnumerable<CustomerDto>> FindCustomersAsync()
         {
-            var result = await base.FindAllAsync();
+            var result = await FindAllAsync();
             return Mapper.MapList<CustomerDto>(result);
         }
     }

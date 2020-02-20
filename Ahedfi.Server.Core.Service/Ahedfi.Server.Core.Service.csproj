@@ -17,6 +17,9 @@
     <Reference Include="Ahedfi.Component.Core.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Core.Domain.dll</HintPath>
     </Reference>
+    <Reference Include="Ahedfi.Component.Security.Domain">
+      <HintPath>..\Libs\Ahedfi.Component.Security.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="Ahedfi.Component.Services.Domain">
       <HintPath>..\Libs\Ahedfi.Component.Services.Domain.dll</HintPath>
     </Reference>
