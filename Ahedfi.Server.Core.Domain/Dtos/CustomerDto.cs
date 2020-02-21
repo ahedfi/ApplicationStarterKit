@@ -8,6 +8,7 @@ namespace Ahedfi.Server.Core.Domain.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public AddressDto SecondAddress { get; set; }
         public ICollection<AddressDto> Addresses { get; set; }
     }
 }

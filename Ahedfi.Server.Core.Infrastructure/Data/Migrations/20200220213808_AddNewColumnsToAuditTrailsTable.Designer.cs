@@ -4,14 +4,16 @@ using Ahedfi.Server.Core.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ahedfi.Server.Core.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20200220213808_AddNewColumnsToAuditTrailsTable")]
+    partial class AddNewColumnsToAuditTrailsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,9 +131,6 @@ namespace Ahedfi.Server.Core.Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SecondAddressId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -139,8 +138,6 @@ namespace Ahedfi.Server.Core.Infrastructure.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SecondAddressId");
 
                     b.ToTable("Customers");
                 });
@@ -150,13 +147,6 @@ namespace Ahedfi.Server.Core.Infrastructure.Data.Migrations
                     b.HasOne("Ahedfi.Server.Core.Domain.Entities.Customer", null)
                         .WithMany("Addresses")
                         .HasForeignKey("CustomerId");
-                });
-
-            modelBuilder.Entity("Ahedfi.Server.Core.Domain.Entities.Customer", b =>
-                {
-                    b.HasOne("Ahedfi.Server.Core.Domain.Entities.Address", "SecondAddress")
-                        .WithMany()
-                        .HasForeignKey("SecondAddressId");
                 });
 #pragma warning restore 612, 618
         }

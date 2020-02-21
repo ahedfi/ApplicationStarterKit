@@ -12,6 +12,8 @@ namespace Ahedfi.Server.Core.Domain.Entities
         }
         public string Name { get; set; }
 
+        public Address SecondAddress{ get; set; }
+
         public ICollection<Address> Addresses { get; set; }
     }
 }

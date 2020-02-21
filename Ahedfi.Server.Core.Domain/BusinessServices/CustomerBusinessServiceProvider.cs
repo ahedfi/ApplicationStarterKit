@@ -20,7 +20,7 @@ namespace Ahedfi.Server.Core.Domain.BusinessService
         {
             var customer = Mapper.Map<Customer>(customerDto);
 
-            await base.SaveAsync(user.UserName, customer);
+            await base.SaveAsync(user, customer);
 
             return Mapper.Map<CustomerDto>(customer);
         }
