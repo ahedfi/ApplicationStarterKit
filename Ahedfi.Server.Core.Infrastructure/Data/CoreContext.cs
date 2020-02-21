@@ -17,6 +17,7 @@ namespace Ahedfi.Server.Core.Infrastructure.Data
         {
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new AddressConfiguration());
+            modelBuilder.ApplyConfiguration(new AuditConfiguration());
         }
     }
 }

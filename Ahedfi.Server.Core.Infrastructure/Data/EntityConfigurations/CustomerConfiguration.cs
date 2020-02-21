@@ -8,6 +8,9 @@ namespace Ahedfi.Server.Core.Infrastructure.Data.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
+            builder.ToTable("APP_CUS_Customers");
+            builder.HasKey(t => t.Id);
+
             builder.Property(t => t.Name)
            .IsRequired();
         }

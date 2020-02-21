@@ -8,6 +8,9 @@ namespace Ahedfi.Server.Core.Infrastructure.Data.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Address> builder)
         {
+            builder.ToTable("APP_ADD_Adresses");
+            builder.HasKey(t => t.Id);
+
             builder.Property(t => t.Street)
            .IsRequired();
         }
