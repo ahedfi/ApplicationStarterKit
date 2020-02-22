@@ -8,7 +8,7 @@ namespace Ahedfi.Server.Core.Domain.Interface
 {
     public interface ICoreServices
     {
-        Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request);
+        Task<SaveResponse<CustomerDto>> AddCustomerAsync(SaveRequest<CustomerDto> request);
         Task<FindResponse<CustomerDto>> FindAllCustomersAsync(FindRequest request);
     }
 }

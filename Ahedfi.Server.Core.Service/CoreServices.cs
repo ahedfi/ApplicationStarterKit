@@ -13,7 +13,7 @@ namespace Ahedfi.Server.Core.Service
         public CoreServices(IServiceLocator serviceLoactor) : base(serviceLoactor)
         {
         }
-        public async Task<SaveResponse<CustomerDto>> AddCustomer(SaveRequest<CustomerDto> request)
+        public async Task<SaveResponse<CustomerDto>> AddCustomerAsync(SaveRequest<CustomerDto> request)
         {
             request.Owner = new UserIdentity { UserName = "ahedfi" };// TODO : This line should be removed
             return new SaveResponse<CustomerDto>
