@@ -22,7 +22,7 @@ namespace Ahedfi.Server.Core.WebApiController
         {
             try
             {
-                return await GetInstance<ICoreServices>().AddCustomer(request);
+                return await GetInstance<ICoreServices>().AddCustomerAsync(request);
             }
             catch (Exception ex)
             {
